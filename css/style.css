@@ -1,0 +1,263 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============ PARTE PRETA COM LOGO ============ */
+.header-top {
+    background-color: #000; /* PRETO */
+    padding: 30px 0; /* Espaço em cima e embaixo */
+    text-align: center; /* Centraliza horizontalmente */
+    width: 100%; /* Ocupa toda a largura */
+}
+
+.logo-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Espaço nas laterais */
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    display: inline-block; /* Para centralizar com text-align */
+    vertical-align: middle;
+}
+/* ============================================= */
+
+/* Navegação verde */
+.header-nav {
+    background-color: #4D5945;
+    padding: 20px 0;
+    border-top: 2px solid #6B7A60;
+    border-bottom: 2px solid #3A4334;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 40px;
+    height: 100%;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ACACAC;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    
+    width: 142px;
+    height: 40px;
+    
+    border-top: 2px solid #8B8B8B;
+    border-left: 2px solid #8B8B8B;
+    border-right: 2px solid #3A4334;
+    border-bottom: 2px solid #3A4334;
+    
+    background-color: #4D5945;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    border-top: 2px solid #3A4334;
+    border-left: 2px solid #3A4334;
+    border-right: 2px solid #8B8B8B;
+    border-bottom: 2px solid #8B8B8B;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 1px;
+    background-color: rgba(172, 172, 172, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.nav-item.active .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    border-top: 2px solid #3A4334;
+    border-left: 2px solid #3A4334;
+    border-right: 2px solid #8B8B8B;
+    border-bottom: 2px solid #8B8B8B;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* CONTEÚDO PRINCIPAL - PORTFÓLIO */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Container dos cards */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Card individual */
+.portfolio-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #e0e0e0;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 20px 20px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+.card-image {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    min-height: 250px;
+    position: relative;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    color: #888;
+    font-size: 16px;
+    border: 2px dashed #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 200px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        width: 120px;
+        height: 35px;
+        font-size: 13px;
+    }
+    
+    .nav-item:not(:last-child)::after {
+        right: -10px;
+        height: 25px;
+    }
+    
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 150px;
+    }
+    
+    .header-top {
+        padding: 20px 0;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-link {
+        width: 110px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .nav-item:not(:last-child)::after {
+        display: none;
+    }
+    
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
